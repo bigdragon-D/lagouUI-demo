@@ -161,6 +161,10 @@ li {
   text-align: center;
   text-decoration: none;
   color: #fff;
+  background-color: transparent;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
   border: 1px solid #fff;
   *border: 1px solid transparent;
   outline: 0;
@@ -200,9 +204,6 @@ li {
   display: block;
   width: 100%;
   padding: 0;
-}
-.btn + .btn {
-  margin-top: 23px;
 }
 .btn_green {
   color: #00b38a;

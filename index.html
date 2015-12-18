@@ -1,10 +1,181 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>lagouUI示例文档</title>
+<meta charset="UTF-8">
+<title>lagouUI示例文档</title>
+<link rel="stylesheet" href="dist/css/lagou.css">
+<link rel="stylesheet" href="demo/demo.css">
+<!-- 高亮代码样式 -->
+<link rel="stylesheet" href="vender/SHcode/shCoreDefault.css">
 </head>
 <body>
-	
+<div class="header">
+	<div class="container clearfix">	
+		<div class="top_logo fl">
+			<h1>拉勾UI组件</h1>
+		</div>
+		<div class="top_nav fl">
+			<li><a href="">基础UI</a></li>
+			<li><a href="">组件widget</a></li>
+		</div>
+	</div>
+</div>
+<div class="slogan">
+	<div class="container">
+		<h2 class="slogan_content">
+			lagouUI,一套致力于让开发更容易、更实用的工具
+		</h2>
+	</div>
+</div>
+<div class="container clearfix" style="margin-top:30px">
+	<div class="item_menu fl">
+		<ul class="clearfix">
+			<li>按钮</li>
+			<li>复选框</li>
+			<li>下拉框</li>
+			<!-- <li></li>
+			<li>Input</li>
+			<li>Multidropbox</li>
+			<li>Textarea</li>
+			<li>Tips</li>
+			<li>Typesetting</li> -->
+		</ul>
+	</div>
+	<div class="main fl">
+		<div class="item">
+			<h3 class="item_name">按钮</h3>
+			<p class="item_name_des">可作为按钮使用的标签或元素</p>
+			<p class="item_text">为 <code>&lt;a&gt;</code>、<code>&lt;button&gt;</code> 或 <code>&lt;input&gt;</code> 元素添加按钮类（button class）即可使用 lagouUI 提供的样式</p>
+			<div class="code_area">
+				<div class="example_part">
+					<h4>实例</h4>
+					<a href="#" class="btn">link按钮</a>
+					<button class="btn">button按钮</button>
+					<input type="button" class="btn" value="input按钮">
+					<input type="submit" class="btn" value="submit按钮">
+				</div>
+				<div class="code_part">
+					<pre class="brush:html">
+						<a href="#" class="btn">link按钮</a>
+						<button class="btn">button按钮</button>
+						<input type="button" class="btn" value="input按钮">
+						<input type="submit" class="btn" value="submit按钮">
+					</pre>
+				</div>
+			</div>
+			<h3 class="item_name">按钮-预定义样式</h3>
+			<p class="item_text">默认为按钮添加了三种样式: <code> .btn_green</code> <code> .btn_red </code><code> .btn_link </code></p>
+			<div class="code_area">
+				<div class="example_part">
+					<h4>实例</h4>
+					<a href="#" class="btn">默认按钮</a>
+					<button class="btn btn_green">拉勾绿按钮</button>
+					<button class="btn btn_red">拉勾红按钮</button>
+					<a href="#" class="btn btn_link">链接按钮</a>
+				</div>
+				<div class="code_part">
+					<pre class="brush:html">
+						<a href="#" class="btn">默认按钮</a>
+						<button class="btn btn_green">拉勾绿按钮</button>
+						<button class="btn btn_red">拉勾红按钮</button>
+						<a href="#" class="btn btn_link">链接按钮</a>
+					</pre>
+				</div>
+			</div>
+			<h3 class="item_name">尺寸-预定义尺寸</h3>
+			<p class="item_text">默认为按钮添加了两种尺寸 <code> .btn_sm</code> <code> .btn_lg</code></p>
+			<div class="code_area">
+				<div class="example_part">
+					<h4>实例</h4>
+					<button class="btn  btn_green btn_sm">小尺寸</button>
+					<a href="#" class="btn btn_green ">默认尺寸</a>
+					<button class="btn  btn_green btn_lg">大尺寸</button>
+				</div>
+				<div class="code_part">
+					<pre class="brush:html">
+						<button class="btn  btn_green btn_sm">小尺寸</button>
+						<a href="#" class="btn btn_green ">默认尺寸</a>
+						<button class="btn  btn_green btn_lg">大尺寸</button>
+					</pre>
+				</div>
+			</div>
+			<h3 class="item_name">实心、空心、禁用按钮</h3>
+			<p class="item_text">只需要添加实心样式 <code> .btn_active</code> 空心样式 <code> .btn_outline</code>禁用样式 <code> .btn_disabled</code></p>
+			<div class="code_area">
+				<div class="example_part">
+					<h4>实例</h4>
+					<button class="btn btn_green btn_active">实心按钮</button>
+					<button class="btn btn_green btn_outline">空心按钮</button>
+					<button class="btn btn_green btn_disabled">禁用按钮</button>
+				</div>
+				<div class="code_part">
+					<pre class="brush:html">
+						<button class="btn btn_green btn_active">实心按钮</button>
+						<button class="btn btn_green btn_outline">空心按钮</button>
+						<button class="btn btn_green btn_disabled">禁用按钮</button>
+					</pre>
+				</div>
+			</div>
+			<h3 class="item_name">其他</h3>
+			<p class="item_text">带图标按钮和块级按钮</p>
+			<div class="code_area">
+				<div class="example_part">
+					<h4>实例</h4>
+					<button class="btn btn_icon"><i class="icon"></i>图标按钮</button>
+					<br>
+					<br>
+					<button class="btn btn_green btn_block">块级按钮</button>
+				</div>
+				<div class="code_part">
+					<pre class="brush:html">
+						<button class="btn btn_icon"><i class="icon"></i>图标按钮</button>
+						<button class="btn btn_green btn_block">块级按钮</button>
+					</pre>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<h3 class="item_name">复选框</h3>
+			<p class="item_name_des">复选框包含复选框和筛选框</p>
+			<p class="item_text">给<code> input[type=checkbox] </code> 添加复选框样式 <code>.checkbox</code> 给筛选框添加 <code>.checkbox .screenbox</code>并添加自定义属性<code> data-text</code> 来显示label文字，而不需要单独添加 <code>label</code>标签</p>
+			<div class="code_area">
+				<div class="example_part">
+					<h4>实例</h4>
+					<input type="checkbox" value="" class="checkbox" data-text="客户端" > 
+					<br>	
+					<br>	
+					<input type="checkbox" value="" class="checkbox screenbox" data-text="有面试评价">
+				</div>
+				<div class="code_part">
+					<pre class="brush:html">
+						<input type="checkbox" value="" class="checkbox" data-text="客户端" > 
+						<input type="checkbox" value="" class="checkbox screenbox" data-text="有面试评价">
+					</pre>
+				</div>
+			</div>	    
+		</div>
+	</div>
+</div>
+
+<script src="vender/jquery/jquery.min.js"></script>
+<script src="dist/js/ui.js"></script>
+<script src="vender/SHcode/shCore.js"></script>
+<script src="vender/SHcode/shAutoloader.js"></script>
+<script src="vender/sticky.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// 调用sticky插件
+	$(".item_menu").stick_in_parent();
+	// 调用语法高亮插件
+	SyntaxHighlighter.autoloader(
+            ['js','jscript','javascript','vender/SHcode/shBrushJScript.js'],
+            ['css','vender/SHcode/shBrushCss.js'],
+            ['html','vender/SHcode/shBrushXml.js']
+        ); 
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all(); 
+})    
+</script>
 </body>
 </html>
