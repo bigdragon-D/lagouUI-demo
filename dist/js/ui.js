@@ -516,7 +516,7 @@ $(function(){
 		init: function(){
 			if(this.dataSetting != null ){
 				var _setting = $.parseJSON(this.dataSetting);
-				$.extend(this._default, _setting);
+				$.extend(this.options, _setting);
 			}
 			this.ele.css({ width:this.options.width,height:this.options.height,minHeight: this.options.minHeight});
 			this.render();

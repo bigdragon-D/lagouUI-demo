@@ -650,11 +650,11 @@ li {
 }
 .box_checkbox .screenbox:checked + label:before {
   width: 18px;
-  background-position: -42px 0;
+  background-position: -41px 0;
 }
 .box_checkbox .screenbox + .checked:before {
   width: 18px;
-  background-position: -42px 0;
+  background-position: -41px 0;
 }
 .textarea {
   line-height: 1.2;
