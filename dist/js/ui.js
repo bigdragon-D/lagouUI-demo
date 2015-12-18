@@ -494,7 +494,7 @@ $(function(){
 		// 第四步 : 初始化配置
 		this.init();
 		// 第五步：事件委托
-		$(document).on('click',hide)
+		$(document).off('click',this.toggle).on('click',hide)
 				   .on('click', '.dropbox,[data-role=dropbox]', this.toggle)
 			       .on('click', '.dropbox li,[data-role=dropbox] li', this.getValue);
 	};
@@ -502,7 +502,7 @@ $(function(){
 	Dropbox._default = {
 		width : '',
 		height : '',
-		minHeight:'',
+		maxHeight:'',
 		bgcolor : "white",
 		isOverflow : false,
 		placeholder: '请选择',
@@ -518,8 +518,9 @@ $(function(){
 				var _setting = $.parseJSON(this.dataSetting);
 				$.extend(this.options, _setting);
 			}
-			this.ele.css({ width:this.options.width,height:this.options.height,minHeight: this.options.minHeight});
+			this.ele.css({ width:this.options.width,height:this.options.height});
 			this.render();
+			this.ele.find('.drop_menu').css({maxHeight: this.options.maxHeight}); 
 			this.ele.find('span').text(this.options.placeholder);
 			if(this.options.bgcolor == "gray"){
 				this.ele.find('.dropbtn').addClass('dropbtn_gray');
@@ -640,6 +641,7 @@ $(function(){
 				var _setting = $.parseJSON(this.dataSetting);
 				$.extend(this.options, _setting);
 			}
+			this.ele.css({ width:this.options.width,height:this.options.height});
 			this.render();
 			this.ele.find('span').text(this.options.placeholder);
 			this.ele.find('.multiNumTips').text(this.options.multiNumTips)

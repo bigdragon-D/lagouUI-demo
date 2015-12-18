@@ -154,23 +154,50 @@
 		</div>
 		<div class="item">
 			<h3 class="item_name">下拉框</h3>
-			<p class="item_name_des">下拉菜单，默认有两种方式配置参数，数据;</p>
+			<p class="item_name_des">当你向一个<code>div</code>添加样式<code>.dropbox</code>或者 <code>data-role="dropbox"</code>两者需写一个便认为他要调用Dropbox插件，其中默认有两种方式配置参数，数据;</p>
 			<p class="item_text">第一种配置方式：通过<code>data-setting='{}'</code>配置，第二种在调用时配置参数</p>
 			<div class="code_area">
 				<div class="example_part">
 					<h4>实例</h4>
-					<div class="dropbox" data-role="dropbox"></div>
+					<div class="dropbox"></div>
 					<br>
 					<br>
-					<div class="dropbox" data-role="dropbox" data-setting='{"width":500,"height":40}'></div>
+					<div class="dropbox" data-setting='{"width":400,"height":40}'></div>
+					<br>
+					<br>
+					<div data-role="dropbox" id="testDropbox"></div>
 				</div>
 				<div class="code_part">
 					<pre class="brush:html">
+						<!-- 调用dropbox都必须要在<code>script</code>标签中显式调用 -->
+						&lt;script&gt;
+							$('.dropbox').dropbox();
+						&lt;/script&gt;
 						<!-- 默认配置 -->
-						&lt;div class="dropbox" data-role="dropbox"&gt;&lt;/div&gt;
+						&lt;div class="dropbox" &gt;&lt;/div&gt;
 						<!-- 通过data—setting配置参数 -->
-						&lt;class="dropbox" data-role="dropbox" data-setting='{"width":500,"height":40}'&gt;&lt;/div&gt;
 						<!-- ps:注意自定义属性配置参数一定要符合json格式 -->
+						&lt;div class="dropbox" data-setting='{"width":400,"height":40}'&gt;&lt;/div&gt;
+					</pre>
+					<pre class="brush:html">
+						&lt;div  data-role="dropbox" id="testDropbox"&gt;&lt;/div&gt;
+						<!-- 调用的时候配置参数 -->
+						$('#testDropbox').dropbox({
+					    	width: 320,
+					    	maxHeight : 200,
+					    	placeholder : "测试测试"
+					    })
+					</pre>
+					<pre class="brush:html">
+						<!-- Dropbox 参数列表 -->
+						width : '',    				默认300px
+						height : '',   				默认40px
+						maxHeight:'',  				默认没有
+						bgcolor : "white",			默认为white可以选gray
+						isOverflow : false,			默认为false
+						placeholder: '请选择',		  默认为“请选择”
+						data : ['2K以下','5K以下'],  默认数据，可自定义添加
+						template : ''				建议为默认模板，一般不作更改，可以去源码更改
 					</pre>
 				</div>
 			</div>	    
@@ -179,9 +206,12 @@
 </div>
 
 <script src="vender/jquery/jquery.min.js"></script>
+<script src="demo/demo.js"></script>
 <script src="dist/js/ui.js"></script>
+<!-- 高亮显式代码 -->
 <script src="vender/SHcode/shCore.js"></script>
 <script src="vender/SHcode/shAutoloader.js"></script>
+<!-- 左侧菜单固定在左侧 -->
 <script src="vender/sticky.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -198,6 +228,11 @@ $(document).ready(function(){
     SyntaxHighlighter.all(); 
     $('.checkbox').checkbox();
     $('.dropbox').dropbox();
+    $('#testDropbox').dropbox({
+    	width: 320,
+    	maxHeight : 200,
+    	placeholder : "测试测试"
+    })
 })    
 </script>
 </body>

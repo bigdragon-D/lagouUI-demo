@@ -365,12 +365,14 @@ li {
 * + .input_item {
   margin-top: 23px;
 }
-.dropbox {
+.dropbox,
+[data-role="dropbox"] {
   position: relative;
   *border: 1px solid transparent;
   width: 300px;
 }
-.dropbox .dropbtn {
+.dropbox .dropbtn,
+[data-role="dropbox"] .dropbtn {
   line-height: 46px;
   min-width: 200px;
   width: 100%;
@@ -379,7 +381,8 @@ li {
   text-align: left;
   *border: none;
 }
-.dropbox .dropbtn .caret {
+.dropbox .dropbtn .caret,
+[data-role="dropbox"] .dropbtn .caret {
   position: absolute;
   z-index: 3;
   top: 19px;
@@ -394,7 +397,8 @@ li {
   -o-transition: 0.4s ease-out;
   transition: 0.4s ease-out;
 }
-.dropbox .dropbtn:focus .caret {
+.dropbox .dropbtn:focus .caret,
+[data-role="dropbox"] .dropbtn:focus .caret {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -445,6 +449,7 @@ li {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 .drop_menu > li {
   line-height: 36px;
@@ -473,12 +478,14 @@ li {
   white-space: nowrap;
   overflow: hidden;
 }
-.multiselect {
+.multiselect,
+[data-role="multiselect"] {
   position: relative;
   *border: 1px solid transparent;
   width: 300px;
 }
-.multiselect .selectbtn {
+.multiselect .selectbtn,
+[data-role="multiselect"] .selectbtn {
   line-height: 46px;
   min-width: 200px;
   width: 100%;
@@ -487,7 +494,8 @@ li {
   text-align: left;
   *border: none;
 }
-.multiselect .selectbtn .caret {
+.multiselect .selectbtn .caret,
+[data-role="multiselect"] .selectbtn .caret {
   position: absolute;
   z-index: 3;
   top: 19px;
@@ -502,7 +510,8 @@ li {
   -o-transition: 0.4s ease-out;
   transition: 0.4s ease-out;
 }
-.multiselect .selectbtn:focus .caret {
+.multiselect .selectbtn:focus .caret,
+[data-role="multiselect"] .selectbtn:focus .caret {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
