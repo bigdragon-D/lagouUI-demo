@@ -200,6 +200,61 @@
 						template : ''				建议为默认模板，一般不作更改，可以去源码更改
 					</pre>
 				</div>
+
+			</div>	    
+		</div>
+		<div class="item">
+			<h3 class="item_name">下拉多选框</h3>
+			<p class="item_name_des">当你向一个<code>div</code>添加样式<code>.multiselect</code>或者 <code>data-role="multiselect"</code>两者需写一个便认为他要调用Multiselect插件，其中默认有两种方式配置参数，数据;</p>
+			<p class="item_text">第一种配置方式：通过<code>data-setting='{}'</code>配置，第二种在调用时配置参数</p>
+			<div class="code_area">
+				<div class="example_part">
+					<h4>实例</h4>
+					<div class="multiselect"></div>
+					<br>
+					<br>
+					<div class="multiselect" data-setting='{"width":400,"height":40}'></div>
+					<br>
+					<br>
+					<div data-role="multiselect" id="testMultiselect"></div>
+				</div>
+				<div class="code_part">
+					<pre class="brush:html">
+						<!-- 调用multiselect都必须要在<code>script</code>标签中显式调用 -->
+						&lt;script&gt;
+							$('.multiselect').multiselect();
+						&lt;/script&gt;
+						<!-- 默认配置 -->
+						&lt;div class="multiselect" &gt;&lt;/div&gt;
+						<!-- 通过data—setting配置参数 -->
+						<!-- ps:注意自定义属性配置参数一定要符合json格式 -->
+						&lt;div class="multiselect" data-setting='{"width":400,"height":40}'&gt;&lt;/div&gt;
+					</pre>
+					<pre class="brush:html">
+						&lt;div  data-role="multiselect" id="testMultiselect"&gt;&lt;/div&gt;
+						<!-- 调用的时候配置参数 -->
+						$('#testMultiselect').multiselect({
+					    	width: 320,
+					    	maxHeight : 200,
+					    	placeholder : "下拉测试",
+					    	multiNumTips: "(最多选择三个)",
+    						multiNum : 3
+					    })
+					</pre>
+					<pre class="brush:html">
+						<!-- Multiselect 参数列表 -->
+						width : '',    				默认300px
+						height : '',   				默认46px
+						maxHeight:'',  				默认没有
+						bgcolor : "white",			默认为white可以选gray
+						isOverflow : false,			默认为false
+						multiNum : 2,				设置允许多选个数
+						placeholder: '请选择',		  默认为“请选择”
+						multiNumTips :''			(最多可选择两个)
+						data : ['2K以下','5K以下'],  默认数据，可自定义添加
+						template : ''				建议为默认模板，一般不作更改，可以去源码更改
+					</pre>
+				</div>
 				
 			</div>	    
 		</div>
@@ -227,13 +282,22 @@ $(document).ready(function(){
     SyntaxHighlighter.defaults['gutter'] = false;
     SyntaxHighlighter.defaults['toolbar'] = false;
     SyntaxHighlighter.all(); 
-    $('.checkbox').checkbox();
+    
     $('.dropbox').dropbox();
     $('#testDropbox').dropbox({
     	width: 320,
     	maxHeight : 200,
     	placeholder : "测试测试"
-    })
+    });
+    $('.multiselect').multiselect();
+    $('#testMultiselect').multiselect({
+    	width: 320,
+    	maxHeight : 200,
+    	placeholder : "下拉测试",
+    	multiNumTips: "(最多选择三个)",
+    	multiNum : 3
+    });
+    $('.checkbox').checkbox();
 })    
 </script>
 </body>
