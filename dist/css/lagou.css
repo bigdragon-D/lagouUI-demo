@@ -484,7 +484,6 @@ li {
   position: relative;
   *border: 1px solid transparent;
   width: 300px;
-  line-height: 46px;
   height: 46px;
 }
 .multiselect .selectbtn,
