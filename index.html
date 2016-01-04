@@ -33,7 +33,8 @@
 			<li>按钮</li>
 			<li>复选框</li>
 			<li>下拉框</li>
-			<!-- <li></li>
+			<li>下拉多选框</li>
+			<!-- 
 			<li>Input</li>
 			<li>Multidropbox</li>
 			<li>Textarea</li>
@@ -258,12 +259,42 @@
 				
 			</div>	    
 		</div>
+		<div class="item">
+			<h3 class="item_name">日期时间选框</h3>
+			<p class="item_name_des">本日期时间选框是基于<code>datetimepicker</code>，配置详情可具体百度其PAI。</p>
+			<p class="item_text">下面附上其常用配置</p>
+			<div class="code_area">
+				<div class="example_part">
+					<h4>实例</h4>
+					<input type="text" class="input input_gray" id="datepicker" placeholder="请选择日期" readonly>
+					<br>
+					<br>
+					<br>
+					<br>
+					<input type="text" class="input input_gray" id="datepicker2" placeholder="请选择日期" readonly>
+				</div>
+				<div class="code_part">
+					<pre class="brush:html">
+						<!-- 调用multiselect都必须要在<code>script</code>标签中显式调用 -->
+						<input type="text" class="input input_gray" id="datepicker" placeholder="请选择日期" readonly>
+						<!-- 常用默认配置 -->
+						lang: 'zh'   			默认语言 可以选择 'zh / en' 中英文;
+						formatDate : 'Y-m-d' 	日期格式，支持自定义 ex: Y/m/d
+					</pre>
+					
+				</div>
+				
+			</div>	    
+		</div>
 	</div>
 </div>
 
 <script src="vender/jquery/jquery.min.js"></script>
 <script src="demo/demo.js"></script>
 <script src="dist/js/ui.js"></script>
+<!-- 时间下拉组件 -->
+<link rel="stylesheet" href="bower_components/datetimepicker/jquery.datetimepicker.css">
+<script src="bower_components/datetimepicker/jquery.datetimepicker.js"></script>
 <!-- 高亮显式代码 -->
 <script src="vender/SHcode/shCore.js"></script>
 <script src="vender/SHcode/shAutoloader.js"></script>
@@ -298,6 +329,12 @@ $(document).ready(function(){
     	multiNum : 3
     });
     $('.checkbox').checkbox();
+
+    $('#datepicker').datetimepicker();
+    $('#datepicker2').datetimepicker({
+    	prevButton : true, 
+    	nextButton : true,
+    });
 })    
 </script>
 </body>
