@@ -580,6 +580,8 @@
 }
 .xdsoft_datetimepicker .text span {
 	text-align: center;
+	font-size: 18px;
+	color: #333;
 }
 .xdsoft_datetimepicker .text:after {
 	display: none;

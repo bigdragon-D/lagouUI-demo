@@ -34,6 +34,7 @@
 			<li>复选框</li>
 			<li>下拉框</li>
 			<li>下拉多选框</li>
+			<li>日期时间选框</li>
 			<!-- 
 			<li>Input</li>
 			<li>Multidropbox</li>
@@ -261,8 +262,8 @@
 		</div>
 		<div class="item">
 			<h3 class="item_name">日期时间选框</h3>
-			<p class="item_name_des">本日期时间选框是基于<code>datetimepicker</code>，配置详情可具体百度其PAI。</p>
-			<p class="item_text">下面附上其常用配置</p>
+			<p class="item_name_des">本日期时间选框是基于<code>datetimepicker</code>，配置详情可具体百度其PAI，默认为下拉选择日期或者时间，也可以配置左右箭头选择日期，如下：</p>
+			<p class="item_text">下面附上其常用配置。</p>
 			<div class="code_area">
 				<div class="example_part">
 					<h4>实例</h4>
@@ -275,13 +276,25 @@
 				</div>
 				<div class="code_part">
 					<pre class="brush:html">
-						<!-- 调用multiselect都必须要在<code>script</code>标签中显式调用 -->
+						<!-- 调用datepicker都必须要在<code>script</code>标签中显式调用 -->
 						<input type="text" class="input input_gray" id="datepicker" placeholder="请选择日期" readonly>
+
+						<input type="text" class="input input_gray" id="datepicker2" placeholder="请选择日期" readonly>
 						<!-- 常用默认配置 -->
 						lang: 'zh'   			默认语言 可以选择 'zh / en' 中英文;
-						formatDate : 'Y-m-d' 	日期格式，支持自定义 ex: Y/m/d
+						formatDate : 'Y-m-d' 	日期格式，支持自定义 ex: Y/m/d  Y年m月d日
+						prevButton : true, 		带左右箭头
+    					nextButton : true
 					</pre>
-					
+					<pre class="brush:html">
+						<!-- 第一种调用方式 默认选取时期方式 -->
+						$('#datepicker').datetimepicker();
+						<!-- 第二种调用方式 带左右按钮选择日期方式 -->
+						$('#datepicker2').datetimepicker({
+					    	prevButton : true, 
+					    	nextButton : true
+					    });
+					</pre>
 				</div>
 				
 			</div>	    
@@ -333,7 +346,7 @@ $(document).ready(function(){
     $('#datepicker').datetimepicker();
     $('#datepicker2').datetimepicker({
     	prevButton : true, 
-    	nextButton : true,
+    	nextButton : true
     });
 })    
 </script>
