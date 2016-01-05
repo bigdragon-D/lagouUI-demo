@@ -273,6 +273,11 @@
 					<br>
 					<br>
 					<input type="text" class="input input_gray" id="datepicker2" placeholder="请选择日期" readonly>
+					<br>
+					<br>
+					<br>
+					<br>
+					<input type="text" class="input input_gray" id="datepicker3" placeholder="请选择日期" readonly>
 				</div>
 				<div class="code_part">
 					<pre class="brush:html">
@@ -293,6 +298,13 @@
 						$('#datepicker2').datetimepicker({
 					    	prevButton : true, 
 					    	nextButton : true
+					    });
+					    <!-- 带左右按钮，加上时间选框 -->
+					    $('#datepicker3').datetimepicker({
+					    	prevButton : true, 
+					    	nextButton : true,
+					    	timepicker : true,
+					    	format:	'Y年m月d日 H:i'
 					    });
 					</pre>
 				</div>
@@ -347,6 +359,12 @@ $(document).ready(function(){
     $('#datepicker2').datetimepicker({
     	prevButton : true, 
     	nextButton : true
+    });
+    $('#datepicker3').datetimepicker({
+    	prevButton : true, 
+    	nextButton : true,
+    	timepicker : true,
+    	format:	'Y年m月d日 H:i'
     });
 })    
 </script>
