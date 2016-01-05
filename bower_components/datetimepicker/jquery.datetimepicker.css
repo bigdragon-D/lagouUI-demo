@@ -189,7 +189,13 @@
 	color: #00b38a;
 }
 
-
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month.xdsoft_disabled {
+	opacity: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month.xdsoft_disabled:hover {
+	cursor: pointer;
+}
 /*日期框*/
 .xdsoft_datetimepicker .xdsoft_calendar {
 	border-top: 1px dashed #f0f0f0;
