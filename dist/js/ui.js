@@ -2032,6 +2032,9 @@ Date.parseFunctions={count:0};Date.parseRegexes=[];Date.formatFunctions={count:0
 				checkedNum = $parent.find('input:checked').length,
 				inputItem = $parent.find('input'),
 				selectItem =[];
+			if(self.ele[0] != $this.parent().parent().parent()[0]){
+                return
+            }
 			if(checkedNum == multiNum ){
 				return
 			}else if(checkedNum > multiNum){
